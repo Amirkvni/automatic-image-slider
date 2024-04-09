@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              slider_animation: {
+                "0%": {
+                  "margin-left": 0,
+                },
+                "100%": {
+                  "margin-left": "-300%",
+                },
+              },
+            },
+            animation: {
+              slider_animation: "slider_animation 10s linear infinite ",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .animation-paused {
+          animation-play-state: paused;
+        }
+        .caption-bg {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#7d2ae8] h-screen flex items-center justify-center">
+    <div
+      class="max-w-[800px] h-[500px] w-full border-[7px] border-white border-solid rounded-[20px] overflow-hidden"
+    >
+      <div
+        class="img_row_slider flex h-full w-[400%] animate-slider_animation hover:animation-paused"
+      >
+        <div
+          class="slide w-full h-full cursor-pointer relative [&>div]:hover:opacity-100 [&>div]:hover:visible"
+        >
+          <img src="images/img1.jpg" class="w-full h-full object-cover" />
+          <div
+            class="slide_caption absolute top-0 caption-bg text-white w-full h-full flex items-center justify-center flex-col opacity-0 invisible transition-all duration-300 ease"
+          >
+            <h5 class="text-5xl mb-8">slide title</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
+              veritatis?
+            </p>
+          </div>
+        </div>
+        <div
+          class="slide w-full h-full cursor-pointer relative [&>div]:hover:opacity-100 [&>div]:hover:visible"
+        >
+          <img src="images/img2.jpg" class="w-full h-full object-cover" />
+          <div
+            class="slide_caption absolute top-0 caption-bg text-white w-full h-full flex items-center justify-center flex-col opacity-0 invisible transition-all duration-300 ease"
+          >
+            <h5 class="text-5xl mb-8">slide title</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
+              veritatis?
+            </p>
+          </div>
+        </div>
+        <div
+          class="slide w-full h-full cursor-pointer relative [&>div]:hover:opacity-100 [&>div]:hover:visible"
+        >
+          <img src="images/img3.jpg" class="w-full h-full object-cover" />
+          <div
+            class="slide_caption absolute top-0 caption-bg text-white w-full h-full flex items-center justify-center flex-col opacity-0 invisible transition-all duration-300 ease"
+          >
+            <h5 class="text-5xl mb-8">slide title</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
+              veritatis?
+            </p>
+          </div>
+        </div>
+        <div
+          class="slide w-full h-full cursor-pointer relative [&>div]:hover:opacity-100 [&>div]:hover:visible"
+        >
+          <img src="images/img4.jpg" class="w-full h-full object-cover" />
+          <div
+            class="slide_caption absolute top-0 caption-bg text-white w-full h-full flex items-center justify-center flex-col opacity-0 invisible transition-all duration-300 ease"
+          >
+            <h5 class="text-5xl mb-8">slide title</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
+              veritatis?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
